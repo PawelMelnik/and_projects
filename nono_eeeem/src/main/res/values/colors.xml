@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="yellow_theme_color">#F7EDA1</color>
+    <color name="colorPrimary">#C0CCDA</color>
+    <color name="colorPrimaryDark">#8190A5</color>
+    <color name="colorAccent">#FFFFFF</color>
+    <color name="line_color">#FFFFFF</color>
+    <color name="text_border_color">#C0CCDA</color>
+
+    <color name="yellow1">#C0CCDA</color>
+    <color name="yellow2">#8190A5</color>
+    <color name="grey05">#FFFFFF</color>
+    <color name="orange4">#C0CCDA</color>
+    <color name="orange5">#8190A5</color>
+    <color name="blue2">#47525E</color>
+    <color name="blue25">#FFFFFF</color>
+</resources>
