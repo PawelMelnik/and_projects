@@ -7,4 +7,5 @@
     <string name="zero"></string>
     <string name="custom_wdth">14</string>
     <string name="custom_hght">88</string>
+    <string name="message_click">Click on image to crop.</string>
 </resources>

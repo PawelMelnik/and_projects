@@ -1,5 +1,7 @@
 package com.example.nono_eeeem;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,6 +19,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     EditText etWidth;
     EditText etHeight;
     ImageView imgvPicture;
+    TextView tvClick;
+    Bitmap bm;
+    BitmapFactory.Options dimensions = new BitmapFactory.Options();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,10 +34,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         etWidth = findViewById(R.id.widthText);
         etHeight = findViewById(R.id.heightText);
         imgvPicture = findViewById(R.id.ivImg);
+        tvClick = findViewById(R.id.msgClick);
 
         btnLoad.setOnClickListener(this);
         btnConvert.setOnClickListener(this);
 
+        dimensions.inJustDecodeBounds = true;
 
     }
 
@@ -42,9 +49,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btnLoad:
                 //Load button
                 btnConvert.setEnabled(true);
+                etWidth.setFocusable(true);
+                etWidth.setFocusableInTouchMode(true);
                 showImage();
-                setWidth();
-                setHeight();
+                hintClick();
                 break;
             case R.id.btnConvert:
                 //Convert button
@@ -55,15 +63,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void showImage() {
-        imgvPicture.setImageResource(R.drawable.makson_manager);
+        bm = BitmapFactory.decodeResource(getResources(), R.drawable.panda, dimensions);
+        setWidth();
+        setHeight();
+        imgvPicture.setImageBitmap(bm);
+       // imgvPicture.setImageResource(R.drawable.makson);
     }
 
     private void setWidth() {
         //tvWidth.setText("Первая строка \nВторая строка \nТретья строка");
-        etWidth.setText(R.string.custom_wdth);
+        //etWidth.setText(R.string.custom_wdth);
+        int width = dimensions.outWidth;//bm.getWidth();//imgvPicture.getDrawable().getIntrinsicWidth();
+        etWidth.setText(String.valueOf(width));
     }
 
     private void setHeight() {
-        etHeight.setText(R.string.custom_hght);
+        //getResources().getDrawable(R.drawable.panda).getIntrinsicHeight();
+        //etHeight.setText(R.string.custom_hght);
+        int height =  dimensions.outHeight;//bm.getHeight();//imgvPicture.getDrawable().getIntrinsicHeight();
+        etHeight.setText(String.valueOf(height));
+    }
+
+    private void hintClick() {
+        tvClick.setText(R.string.message_click);
     }
 }
