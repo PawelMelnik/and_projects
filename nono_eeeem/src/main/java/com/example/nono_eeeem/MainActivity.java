@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.ButtonBarLayout;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,8 +14,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     Button btnLoad;
     Button btnConvert;
-    TextView tvWidth;
-    TextView tvHeight;
+    EditText etWidth;
+    EditText etHeight;
     ImageView imgvPicture;
 
     @Override
@@ -25,8 +26,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //Search for View-elements
         btnLoad = findViewById(R.id.btnLoad);
         btnConvert = findViewById(R.id.btnConvert);
-        tvWidth = findViewById(R.id.tvWidth);
-        tvHeight = findViewById(R.id.tvHeight);
+        etWidth = findViewById(R.id.widthText);
+        etHeight = findViewById(R.id.heightText);
         imgvPicture = findViewById(R.id.ivImg);
 
         btnLoad.setOnClickListener(this);
@@ -59,10 +60,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void setWidth() {
         //tvWidth.setText("Первая строка \nВторая строка \nТретья строка");
-        tvWidth.append("\n 14");
+        etWidth.setText(R.string.custom_wdth);
     }
 
     private void setHeight() {
-        tvHeight.append("\n 88");
+        etHeight.setText(R.string.custom_hght);
     }
 }

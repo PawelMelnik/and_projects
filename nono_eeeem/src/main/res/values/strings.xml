@@ -4,4 +4,7 @@
     <string name="CONERT_button">CONVERT</string>
     <string name="width">Width</string>
     <string name="height">Height</string>
+    <string name="zero"></string>
+    <string name="custom_wdth">14</string>
+    <string name="custom_hght">88</string>
 </resources>
