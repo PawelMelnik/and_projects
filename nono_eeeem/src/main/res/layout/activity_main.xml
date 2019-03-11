@@ -4,42 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
     android:descendantFocusability="beforeDescendants"
-    android:focusableInTouchMode="true">
+    android:focusableInTouchMode="true"
+    tools:context=".MainActivity">
     <!---Two previous lines made for disable autofocus-->
 
     <TextView
         android:id="@+id/tvWidth"
         android:layout_width="142dp"
         android:layout_height="30dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginLeft="44dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:text="@string/width"
         android:textAlignment="center"
         android:textColor="#8492A6"
         android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/msgClick"
+        app:layout_constraintEnd_toStartOf="@+id/tvHeight"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.19" />
 
     <TextView
         android:id="@+id/tvHeight"
         android:layout_width="142dp"
         android:layout_height="30dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginRight="44dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:text="@string/height"
         android:textAlignment="center"
         android:textColor="#8492A6"
         android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/widthText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvWidth"
+        app:layout_constraintTop_toTopOf="@+id/tvWidth" />
 
 
     <ImageView
         android:id="@+id/ivImg"
+        android:scaleType="centerCrop"
         android:layout_width="330dp"
         android:layout_height="330dp"
         android:layout_marginStart="8dp"
@@ -47,60 +53,63 @@
         android:layout_marginTop="136dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/image_back"
         android:contentDescription="@null"
-        android:scaleType="fitCenter"
+
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.553"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
 
     <Button
         android:id="@+id/btnLoad"
         android:layout_width="103dp"
         android:layout_height="55dp"
-        android:layout_marginStart="76dp"
-        android:layout_marginLeft="76dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/button_style"
         android:text="@string/LOAD_button"
         android:textColor="#ffff"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/btnConvert"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivImg" />
 
     <Button
         android:id="@+id/btnConvert"
         android:layout_width="103dp"
         android:layout_height="55dp"
-        android:layout_marginEnd="76dp"
-        android:layout_marginRight="76dp"
-        android:layout_marginBottom="48dp"
         android:background="@drawable/button_style"
         android:enabled="false"
         android:text="@string/CONERT_button"
         android:textColor="#ffff"
         android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/btnLoad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnLoad"
+        app:layout_constraintTop_toTopOf="@+id/btnLoad" />
 
     <EditText
         android:id="@+id/widthText"
         android:layout_width="118dp"
         android:layout_height="47dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginLeft="56dp"
         android:ems="10"
+        android:focusable="false"
         android:hint="@string/zero"
         android:inputType="numberSigned"
-        android:focusable="false"
+        android:maxLength="5"
+        android:singleLine="true"
         android:textAlignment="center"
         android:textColor="#8492A6"
         android:textSize="22sp"
-        android:maxLength="5"
-        android:singleLine="true"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tvWidth"
+        app:layout_constraintStart_toStartOf="@+id/tvWidth"
         app:layout_constraintTop_toBottomOf="@+id/tvWidth"
         tools:ignore="Autofill" />
 
@@ -109,18 +118,17 @@
         android:id="@+id/heightText"
         android:layout_width="118dp"
         android:layout_height="47dp"
-        android:layout_marginEnd="56dp"
-        android:layout_marginRight="56dp"
         android:ems="10"
+        android:focusable="false"
         android:hint="@string/zero"
         android:inputType="numberSigned"
-        android:focusable="false"
+        android:maxLength="5"
+        android:maxLines="1"
         android:textAlignment="center"
         android:textColor="#8492A6"
         android:textSize="22sp"
-        android:maxLength="5"
-        android:maxLines="1"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tvHeight"
+        app:layout_constraintStart_toStartOf="@+id/tvHeight"
         app:layout_constraintTop_toBottomOf="@+id/tvHeight"
         tools:ignore="Autofill" />
 

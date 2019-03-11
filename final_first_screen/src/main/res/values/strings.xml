@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Editing</string>
+    <string name="item1">Convert</string>
+    <string name="crop_btn">Crop</string>
+    <string name="columns_btn">Columns</string>
+    <string name="todo" />
+    <string name="first_screen_dialog_title">Columns and rows</string>
+    <string name="Columns">Columns</string>
+    <string name="Rows">Rows</string>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#C0CCDA</color>
+    <color name="colorPrimaryDark">#8190A5</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="menu_color">#D81B60</color>
+
+    <color name="colorButtonTabText">#8492A6</color>
+    <color name="colorButtonTabBackground">#C9D6E6</color>
+    <color name="first_screen_background">#52565B</color>>
+</resources>

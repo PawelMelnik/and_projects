@@ -63,23 +63,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void showImage() {
-        bm = BitmapFactory.decodeResource(getResources(), R.drawable.panda, dimensions);
+        bm = BitmapFactory.decodeResource(getResources(), R.drawable.panda1, dimensions);
+        bm = BitmapFactory.decodeResource(getResources(), R.drawable.panda1);
         setWidth();
         setHeight();
         imgvPicture.setImageBitmap(bm);
-       // imgvPicture.setImageResource(R.drawable.makson);
     }
 
     private void setWidth() {
-        //tvWidth.setText("Первая строка \nВторая строка \nТретья строка");
-        //etWidth.setText(R.string.custom_wdth);
         int width = dimensions.outWidth;//bm.getWidth();//imgvPicture.getDrawable().getIntrinsicWidth();
         etWidth.setText(String.valueOf(width));
     }
 
     private void setHeight() {
         //getResources().getDrawable(R.drawable.panda).getIntrinsicHeight();
-        //etHeight.setText(R.string.custom_hght);
         int height =  dimensions.outHeight;//bm.getHeight();//imgvPicture.getDrawable().getIntrinsicHeight();
         etHeight.setText(String.valueOf(height));
     }
