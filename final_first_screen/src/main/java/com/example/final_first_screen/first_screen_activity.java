@@ -58,9 +58,9 @@ public class first_screen_activity extends AppCompatActivity implements View.OnC
     }
 
     private void Dialog_case(){
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
         // Get the layout inflater
-        LayoutInflater inflater = LayoutInflater.from(context);
+        LayoutInflater inflater = LayoutInflater.from(this);
 
         // Inflate and set the layout for the dialog
         // Pass null as the parent view because its going in the dialog layout
