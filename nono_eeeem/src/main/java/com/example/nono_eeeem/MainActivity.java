@@ -132,8 +132,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         _count = 20;
         setWidth(_width);
         setHeight(_height);
-        Panel p = findViewById(R.id.test);
-        p.doDraw(_start_h, _width, _height, _count);
+        //Panel p = findViewById(R.id.test);
+        //p.doDraw(_start_h, _width, _height, _count);
     }
 
     private void setWidth(int w) {

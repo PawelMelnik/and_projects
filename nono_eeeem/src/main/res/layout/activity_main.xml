@@ -9,14 +9,39 @@
     tools:context=".MainActivity">
     <!---Two previous lines made for disable autofocus-->
 
-    <com.example.nono_eeeem.Panel
-        android:id="@+id/test"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/ivImg"
-        app:layout_constraintEnd_toEndOf="@+id/ivImg"
-        app:layout_constraintStart_toStartOf="@+id/ivImg"
-        app:layout_constraintTop_toTopOf="@+id/ivImg" />
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="339dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivImg"
+            android:layout_width="0dp"
+            android:layout_height="153dp"
+            android:background="@drawable/image_back"
+
+
+            android:contentDescription="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.example.nono_eeeem.Panel
+            android:id="@+id/test"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivImg"
+            app:layout_constraintEnd_toEndOf="@+id/ivImg"
+            app:layout_constraintStart_toStartOf="@+id/ivImg"
+            app:layout_constraintTop_toTopOf="@+id/ivImg" />
+    </android.support.constraint.ConstraintLayout>
 
     <TextView
         android:id="@+id/tvWidth"
@@ -52,27 +77,6 @@
         app:layout_constraintTop_toTopOf="@+id/tvWidth" />
 
 
-    <ImageView
-        android:id="@+id/ivImg"
-        android:layout_width="330dp"
-        android:layout_height="330dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="136dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/image_back"
-        android:contentDescription="@null"
-
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.488" />
-
     <!--
     <SurfaceView
         android:id="@+id/surface"
@@ -97,7 +101,7 @@
         app:layout_constraintEnd_toStartOf="@+id/btnConvert"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivImg" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
     <Button
         android:id="@+id/btnConvert"
@@ -157,14 +161,15 @@
         android:layout_height="20dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
+        android:layout_marginTop="11dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
         android:textAlignment="center"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/ivImg"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.577"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/widthText" />
 
     <SeekBar
         android:id="@+id/seekBar"
@@ -180,11 +185,11 @@
         android:background="@android:color/holo_purple"
         android:max="30"
         android:progress="3"
-        app:layout_constraintBottom_toBottomOf="@+id/msgClick"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.382"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/msgClick"
         app:layout_constraintVertical_bias="0.75" />
 
     <TextView
